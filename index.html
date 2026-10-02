@@ -7,7 +7,7 @@
     <title>Ludo Fire - Official Website</title>
     
     <!-- Google Search Console Verification Tag -->
-        <meta name="google-site-verification" content="98lrXtcSggy_1L_t1bCBKSsQcB08O-iPMugOgiNPSjk" />
+    <meta name="google-site-verification" content="98lrXtcSggy_1L_t1bCBKSsQcB08O-iPMugOgiNPSjk" />
     <style>
         /* Reset and Base Styles */
         * {
@@ -269,14 +269,40 @@
             box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
         }
 
-        /* Footer */
+        /* Footer & Social Icons */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 30px;
             background-color: #070B14;
             color: #64748B;
             font-size: 14px;
             border-top: 1px solid #1E293B;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #1E293B;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFF;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
         }
 
         /* Responsive Design */
@@ -513,6 +539,16 @@
 
     <!-- Footer -->
     <footer>
+        <!-- Instagram Social Icon -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ludofiregame?stkn=YnQ3bmN0NGU4YmZi" target="_blank" aria-label="Follow us on Instagram">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
         <p>&copy; 2026 Ludo Fire. All Rights Reserved. | Developed by Akshit Adroja</p>
     </footer>
 

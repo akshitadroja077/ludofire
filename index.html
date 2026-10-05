@@ -5,28 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo Fire - Official Website</title>
-    
-    <!-- Instagram Bio Bypass & Redirect Logic -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        // Check if user is coming from Instagram bio with redirect parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('redirect') || window.location.pathname.includes('/ludo')) {
-            // Instant redirect to Play Store to bypass in-app browser
-            window.location.replace("https://play.google.com/store/apps/details?id=com.akshit.ludofire&pcampaignid=web_share");
-        }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <meta http-equiv="refresh" content="0; URL='https://play.google.com/store/apps/details?id=com.akshit.ludofire&pcampaignid=web_share'" id="meta-redirect" />
+    
+    <!-- Instagram Bio Click Track & Redirect Logic -->
     <script>
-        // Only run meta redirect if it's explicitly desired, or you can use a clean landing page layout.
-        // To make your normal website visible, let's wrap the meta/js redirect with a trigger condition:
         window.addEventListener('DOMContentLoaded', (event) => {
             const params = new URLSearchParams(window.location.search);
-            // Agar aap bio mein link rakhein: yourdomain.com/?go=playstore
+            // Sirf tabhi redirect hoga jab link mein ?go=playstore hoga
             if (params.has('go')) {
-                window.location.replace("https://play.google.com/store/apps/details?id=com.akshit.ludofire&pcampaignid=web_share");
+                if (typeof gtag === 'function') {
+                    gtag('event', 'instagram_bio_click', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Ludo Fire PlayStore Redirect'
+                    });
+                }
+                setTimeout(function() {
+                    window.location.replace("https://play.google.com/store/apps/details?id=com.akshit.ludofire&pcampaignid=web_share");
+                }, 300);
             }
         });
     </script>
+
     <!-- Google Search Console Verification Tag -->
     <meta name="google-site-verification" content="98lrXtcSggy_1L_t1bCBKSsQcB08O-iPMugOgiNPSjk" />
     <style>
